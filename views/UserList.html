@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>用户列表页面</title>
+</head>
+<body>
+  <table>
+    <tr>
+        <th>用户名</th>
+        <th>邮箱</th>
+        <th>操作</th>
+    </tr>
+    <% for(var i in user){ %>
+      <tr>
+        <td> <%= user[i].username %></td>
+        <td> <%= user[i].email %></td>
+        <td>
+          <div class="">
+            <a href="/users/detail/<%= user[i]._id %>">查看</a>
+            <a href="/users/edit/<%= user[i]._id %>">编辑</a>
+            <a href="#" class="del" data-id="<%=user[i]._id %>">删除</a>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </table>
+</body>
+</html>
