@@ -11,19 +11,22 @@
     <div class="mdui-appbar">
         <div class="mdui-toolbar mdui-color-theme">
             <a href="/users/list" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">home</i></a>
+            <div class="mdui-toolbar-spacer"></div>
+            <a href="/users/add" class="mdui-btn">添加用户</a>
         </div>
     </div>
       <div class="mdui-container mdui-m-t-3">
-          <form action="/users/add" method="post">
+          <form action="/users/update" method="post">
+              <input type="hidden" name="id" value="<%= user._id %>">
               <div class="mdui-textfield">
                   <label class="mdui-textfield-label">username</label>
-                  <input class="mdui-textfield-input" type="text" name="username" value=""/>
+                  <input class="mdui-textfield-input" type="text" name="username" value="<%= user.username %>"/>
               </div>
               <div class="mdui-textfield">
                   <label class="mdui-textfield-label">email</label>
-                  <input class="mdui-textfield-input" type="email" name="email" value=""/>
+                  <input class="mdui-textfield-input" type="email" name="email" value="<%= user.email %>"/>
               </div>
-              <button type="submit" class="mdui-btn mdui-color-theme-accent mdui-ripple">submit</button>
+              <button type="submit" class="mdui-btn mdui-color-theme-accent mdui-ripple">update</button>
           </form>
       </div>
   </body>
